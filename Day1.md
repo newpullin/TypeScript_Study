@@ -77,5 +77,48 @@ type NumberOrString = number |string
 type AnimalAndPerson = Animal &persion
 
 
+* 선택 속성 구문
 
+인터페이스에서 값을 넣어도 되고 넣지 않아도 되는 변수
+
+interface IPerson2 {
+    name: string
+    age: number
+    etc? : boolean
+}
+
+
+* 익명 인터페이스
+
+익명 인터페이스는 주로 다음처럼 함수를 구현할 때 사용됩니다.
+
+function printMe(me: {name: string, age: number, etc?: boolean}){
+    console.log(
+        me.etc ?
+        `${me.name} ${me.age} ${me.etc}` :
+        `${me.name} ${me.age}`
+    )
+}
+
+printMe(ai)
+
+
+* 타입 단언
+
+(<type> object)
+(object as type)
+
+
+// INameable.ts
+export default interface INameable {
+    name: string
+};
+
+//type-assertion.ts
+import INameable from './INameable'
+let obj: object = {name: 'Jack}
+
+let name1 = (<INameable>obj).name
+let name2 = (obj as INameable).name
+console.log(name1, name2)
 
