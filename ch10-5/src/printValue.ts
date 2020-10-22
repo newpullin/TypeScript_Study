@@ -1,6 +1,6 @@
-import {IValuable, Valuable} from './Valuable'
+import {IValuable} from './Valuable'
 
-export const printValue = <T>(o: IValuable<T>): void => console.log(o.value)
+export const printValue = <Q, T extends IValuable<Q>>(o: T): void => console.log(o.value)
 
-export {IValuable, Valuable}
+export {IValuable}
 

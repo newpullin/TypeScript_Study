@@ -1,6 +1,5 @@
-import {printValue, Valuable, IValuable} from './printValue'
+import {printValue, IValuable} from './printValue'
+import {Valuable} from './Valuable'
 
 printValue(new Valuable(1))
-printValue(new Valuable('Hello'))
-printValue(new Valuable(true))
-printValue(new Valuable([1,2,3]))
+printValue({value: true})
